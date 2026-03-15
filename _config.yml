@@ -1,0 +1,7 @@
+title: "Nowruz Digital Exhibition"
+description: "An immersive digital exhibition about Persian Nowruz, the March equinox, Haft-Seen, music, and culinary culture."
+theme: minima
+show_downloads: false
+markdown: kramdown
+plugins:
+  - jekyll-feed
