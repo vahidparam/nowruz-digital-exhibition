@@ -1241,6 +1241,128 @@
       border: 0;
     }
 
+    .spotify-feature {
+      margin-top: 34px;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .spotify-feature::after {
+      content: '';
+      position: absolute;
+      right: -70px;
+      top: -70px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, rgba(14,126,29,0.10), rgba(14,126,29,0) 72%);
+      pointer-events: none;
+    }
+
+    .spotify-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .spotify-title {
+      font-size: clamp(1.6rem, 3vw, 2.35rem);
+      line-height: 0.98;
+      margin-top: 8px;
+    }
+
+    .spotify-layout {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 28px;
+      align-items: stretch;
+      position: relative;
+      z-index: 1;
+    }
+
+    .spotify-player {
+      padding: 18px;
+      border-radius: 24px;
+      border: var(--border-light);
+      background: rgba(255,255,255,0.74);
+      box-shadow: var(--shadow-sm);
+      min-height: 100%;
+    }
+
+    .spotify-player iframe {
+      width: 100%;
+      min-height: 352px;
+      border: 0;
+      border-radius: 18px;
+      background: #111;
+    }
+
+    .spotify-copy {
+      padding: 28px;
+      border-radius: 24px;
+      border: var(--border-light);
+      background: rgba(255,255,255,0.68);
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
+
+    .spotify-copy h3 {
+      font-size: 1.38rem;
+      line-height: 1.06;
+    }
+
+    .spotify-copy p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .spotify-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .spotify-pill {
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(245,240,230,0.72);
+      border: var(--border-light);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .spotify-credit {
+      padding: 18px 20px;
+      border-radius: 20px;
+      border: var(--border-light);
+      background: rgba(255,255,255,0.72);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .spotify-credit strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.92rem;
+      line-height: 1.25;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .spotify-credit p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
     .music-note {
       margin-top: 26px;
       padding: 20px 22px;
@@ -1365,6 +1487,7 @@
 
       .hero-info-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .split-panel { grid-template-columns: 320px minmax(0, 1fr); }
+      .spotify-layout { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 1100px) {
@@ -1410,7 +1533,10 @@
       .astro-card,
       .closing-card,
       .timeline-note,
-      .timeline-content { padding: 22px; }
+      .timeline-content,
+      .spotify-feature,
+      .spotify-copy,
+      .spotify-player { padding: 22px; }
       .section-title { font-size: clamp(2rem, 10vw, 3rem); }
       .hero-info-strip { grid-template-columns: 1fr; }
       .hero-stat { min-height: auto; }
@@ -1420,6 +1546,7 @@
       .hero-btn { width: 100%; }
       .timeline-container { padding-left: 28px; }
       .timeline-item::before { left: -38px; }
+      .spotify-player iframe { min-height: 420px; }
     }
   </style>
 </head>
@@ -1753,7 +1880,60 @@
               <p class="section-lead">Persian classical music turns seasonal transition into sound. The timbre of the tar, the breath of the ney, and the phrasing of vocal avaz deepen the reflective atmosphere of the new year.</p>
             </div>
           </div>
+<div class="spotify-feature glass-card reveal">
+            <div class="spotify-top">
+              <div>
+                <div class="media-role">Curated by Us</div>
+                <h3 class="spotify-title">The exhibition playlist on Spotify</h3>
+              </div>
+              <div class="hero-countdown" style="margin-top: 0;">
+                <div class="count-pill">Persian classical</div>
+                <div class="count-pill">Spring atmosphere</div>
+                <div class="count-pill">Long-form listening</div>
+              </div>
+            </div>
 
+            <div class="spotify-layout">
+              <div class="spotify-player">
+                <!-- Replace REPLACE_WITH_YOUR_PLAYLIST_ID with your actual Spotify playlist ID or full embed URL -->
+               <iframe
+                  data-testid="embed-iframe"
+                  style="border-radius:12px"
+                  src="https://open.spotify.com/embed/playlist/66PdOTLNoLaSHkld220U1i?utm_source=generator&theme=0"
+                  width="100%"
+                  height="352"
+                  frameborder="0"
+                  allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  title="Nowruz Exhibition Curated Spotify Playlist">
+              </iframe>
+              </div>
+
+              <div class="spotify-copy">
+                <h3>A longer listening path for the exhibition</h3>
+                <p>This playlist extends the sonic experience beyond the featured works above. It is framed as a curated companion to the exhibition, arranged by us to move through reflection, ceremony, memory, and renewal across the emotional landscape of Nowruz.</p>
+
+                <div class="spotify-pills">
+                  <div class="spotify-pill">Avaz and reflection</div>
+                  <div class="spotify-pill">Instrumental depth</div>
+                  <div class="spotify-pill">Ceremonial mood</div>
+                  <div class="spotify-pill">Seasonal uplift</div>
+                </div>
+
+                <div class="spotify-credit">
+                  <strong>Curatorial Note</strong>
+                  <p>This Spotify playlist is curated by us as part of the digital exhibition. It is meant to function as an additional layer of the site rather than a separate media block, carrying the same cultural atmosphere into a longer listening session.</p>
+                </div>
+
+                <div class="music-note" style="margin-top: 0;">
+                  Suggested flow: begin with meditative vocal pieces, move into instrumental expansiveness, and close with brighter spring-oriented tracks that feel suitable for the threshold of the new year.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
           <div class="media-grid reveal">
             <article class="media-card">
               <div class="media-info">
@@ -1799,8 +1979,8 @@
               </div>
             </article>
           </div>
-        </div>
-      </section>
+
+          
 
       <section id="exhibit-5" class="section" data-pattern-index="2">
         <div class="section-shell">
