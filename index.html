@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Nowruz | A Digital Cultural Exhibition</title>
-  <meta name="description" content="An immersive digital exhibition exploring Nowruz through the March equinox, ritual timelines, Persian music, symbolic tables, and the culinary culture of the Persian New Year." />
+  <meta
+    name="description"
+    content="An immersive digital exhibition exploring Nowruz through the March equinox, ritual timelines, Persian music, symbolic tables, and the culinary culture of the Persian New Year."
+  />
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@500;700&display=swap');
 
@@ -39,6 +44,7 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -67,7 +73,18 @@
     a { color: inherit; text-decoration: none; }
     img, svg { display: block; max-width: 100%; }
     button { font: inherit; }
-    .persian-script { font-family: 'Noto Naskh Arabic', serif; direction: rtl; }
+    code {
+      font-family: 'Inter', monospace;
+      font-size: 0.92em;
+      background: rgba(11,19,37,0.06);
+      padding: 3px 8px;
+      border-radius: 999px;
+    }
+
+    .persian-script {
+      font-family: 'Noto Naskh Arabic', serif;
+      direction: rtl;
+    }
 
     .top-progress {
       position: fixed;
@@ -187,13 +204,18 @@
     }
 
     .float-orb.one {
-      width: 260px; height: 260px;
-      top: 10%; left: 12%;
+      width: 260px;
+      height: 260px;
+      top: 10%;
+      left: 12%;
       background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.9), rgba(255,255,255,0.1) 55%, transparent 72%);
     }
+
     .float-orb.two {
-      width: 360px; height: 360px;
-      bottom: 6%; right: 8%;
+      width: 360px;
+      height: 360px;
+      bottom: 6%;
+      right: 8%;
       animation-delay: -4s;
       background: radial-gradient(circle at 50% 50%, rgba(196,209,223,0.42), rgba(196,209,223,0.08) 58%, transparent 74%);
     }
@@ -224,9 +246,7 @@
       z-index: 50;
     }
 
-    .brand {
-      margin-bottom: 42px;
-    }
+    .brand { margin-bottom: 42px; }
 
     .brand-mark {
       width: 56px;
@@ -676,9 +696,7 @@
       padding-top: 10px;
     }
 
-    .section-copy {
-      max-width: 880px;
-    }
+    .section-copy { max-width: 880px; }
 
     .section-title {
       font-size: clamp(2.1rem, 4.8vw, 3.7rem);
@@ -698,6 +716,125 @@
       backdrop-filter: blur(12px);
       box-shadow: var(--shadow-md);
       border-radius: var(--radius-lg);
+    }
+
+    .intro-video-shell {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 28px;
+      padding: 30px;
+      overflow: hidden;
+    }
+
+    .intro-video-copy {
+      padding: 10px 6px 10px 6px;
+      display: grid;
+      align-content: center;
+      gap: 18px;
+    }
+
+    .intro-video-copy h3 {
+      font-size: clamp(1.8rem, 3vw, 2.55rem);
+      line-height: 0.95;
+    }
+
+    .intro-video-copy p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .intro-video-frame {
+      border-radius: 26px;
+      overflow: hidden;
+      border: var(--border-light);
+      background: #111;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .intro-video-frame iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      display: block;
+    }
+
+    .section-figure {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 0;
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+
+    .section-figure-copy {
+      padding: 28px 30px;
+      display: grid;
+      align-content: center;
+      gap: 12px;
+      background: linear-gradient(180deg, rgba(245,240,230,0.72), rgba(255,255,255,0.72));
+    }
+
+    .section-figure-copy span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .section-figure-copy span::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .section-figure-copy strong {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      line-height: 1.05;
+    }
+
+    .section-figure-copy p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .section-figure-frame {
+      position: relative;
+      min-height: 320px;
+      border-left: var(--border-light);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.75), rgba(245,240,230,0.6)),
+        radial-gradient(circle at center, rgba(196,209,223,0.32), transparent 60%);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .section-figure-frame img {
+      max-height: 360px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 16px 38px rgba(11,19,37,0.12));
+    }
+
+    .section-figure-placeholder {
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: var(--muted);
+      font-weight: 700;
+      border: 1px dashed rgba(11,19,37,0.18);
+      background: rgba(255,255,255,0.62);
+      border-radius: 22px;
+      width: min(100%, 420px);
+      min-height: 220px;
+      padding: 22px;
     }
 
     .astro-grid {
@@ -871,9 +1008,7 @@
       gap: 28px;
     }
 
-    .timeline-item {
-      position: relative;
-    }
+    .timeline-item { position: relative; }
 
     .timeline-item::before {
       content: '';
@@ -931,9 +1066,7 @@
       margin-bottom: 10px;
     }
 
-    .timeline-header h3 {
-      font-size: 1.45rem;
-    }
+    .timeline-header h3 { font-size: 1.45rem; }
 
     .timeline-header .persian-script {
       font-size: 1.7rem;
@@ -1133,11 +1266,60 @@
       text-align: right;
     }
 
+    .panel-layout {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel-copy p {
+      font-size: 1.08rem;
+      color: var(--ink);
+      line-height: 1.85;
+      margin-bottom: 22px;
+    }
+
     .panel-display p {
       font-size: 1.08rem;
       color: var(--ink);
       line-height: 1.85;
       margin-bottom: 22px;
+    }
+
+    .panel-visual {
+      border-radius: 24px;
+      border: var(--border-light);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.78), rgba(245,240,230,0.62)),
+        radial-gradient(circle at center, rgba(196,209,223,0.3), transparent 62%);
+      min-height: 320px;
+      display: grid;
+      place-items: center;
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .panel-visual img {
+      max-height: 320px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 16px 38px rgba(11,19,37,0.12));
+    }
+
+    .panel-visual-placeholder {
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: var(--muted);
+      font-weight: 700;
+      width: 100%;
+      min-height: 240px;
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.66);
+      border: 1px dashed rgba(11,19,37,0.18);
+      line-height: 1.8;
     }
 
     .symbol-grid {
@@ -1174,6 +1356,7 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 28px;
+      margin-top: 34px;
     }
 
     .media-card {
@@ -1223,7 +1406,10 @@
       background: linear-gradient(180deg, var(--accent), var(--gold));
     }
 
-    .media-info p { color: var(--muted); font-size: 0.95rem; }
+    .media-info p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
 
     .video-wrap {
       position: relative;
@@ -1393,9 +1579,7 @@
       font-weight: 700;
     }
 
-    .closing-section {
-      padding-bottom: 130px;
-    }
+    .closing-section { padding-bottom: 130px; }
 
     .closing-card {
       padding: 42px;
@@ -1469,11 +1653,13 @@
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
+
       *, *::before, *::after {
         animation: none !important;
         transition-duration: 0.01ms !important;
         transition-delay: 0ms !important;
       }
+
       .cursor-glow { display: none; }
     }
 
@@ -1481,17 +1667,22 @@
       .section-header,
       .closing-card,
       .astro-grid,
-      .timeline-wrap {
+      .timeline-wrap,
+      .section-figure,
+      .panel-layout,
+      .intro-video-shell {
         grid-template-columns: 1fr;
       }
 
       .hero-info-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .split-panel { grid-template-columns: 320px minmax(0, 1fr); }
       .spotify-layout { grid-template-columns: 1fr; }
+      .section-figure-frame { border-left: 0; border-top: var(--border-light); }
     }
 
     @media (max-width: 1100px) {
       .app-layout { grid-template-columns: 1fr; }
+
       .sidebar {
         position: fixed;
         inset: 78px 18px auto 18px;
@@ -1504,21 +1695,26 @@
         box-shadow: var(--shadow-lg);
         border: var(--border-light);
       }
+
       body.menu-open .sidebar {
         opacity: 1;
         pointer-events: auto;
         transform: translateY(0) scale(1);
       }
+
       .mobile-topbar { display: block; }
       .content { padding-top: 0; }
       .split-panel { grid-template-columns: 1fr; }
+
       .panel-list {
         border-right: 0;
         border-bottom: var(--border);
         max-height: 340px;
       }
+
       .hero-info-strip,
       .media-grid { grid-template-columns: 1fr; }
+
       .cursor-glow { display: none; }
     }
 
@@ -1526,8 +1722,13 @@
       .hero-center { padding: 44px 22px 28px; }
       .hero-title { font-size: clamp(2.8rem, 14vw, 4.6rem); }
       .hero-nowruz-fa { font-size: clamp(1.8rem, 10vw, 2.4rem); }
+
       .section,
-      .footer { padding-left: 22px; padding-right: 22px; }
+      .footer {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
       .panel-display,
       .panel-display-inner,
       .astro-card,
@@ -1536,7 +1737,12 @@
       .timeline-content,
       .spotify-feature,
       .spotify-copy,
-      .spotify-player { padding: 22px; }
+      .spotify-player,
+      .intro-video-shell,
+      .section-figure-copy {
+        padding: 22px;
+      }
+
       .section-title { font-size: clamp(2rem, 10vw, 3rem); }
       .hero-info-strip { grid-template-columns: 1fr; }
       .hero-stat { min-height: auto; }
@@ -1547,11 +1753,16 @@
       .timeline-container { padding-left: 28px; }
       .timeline-item::before { left: -38px; }
       .spotify-player iframe { min-height: 420px; }
+      .panel-visual,
+      .section-figure-frame { min-height: 260px; }
     }
   </style>
 </head>
+
 <body>
-  <div class="top-progress" aria-hidden="true"><div class="top-progress-bar" id="top-progress-bar"></div></div>
+  <div class="top-progress" aria-hidden="true">
+    <div class="top-progress-bar" id="top-progress-bar"></div>
+  </div>
 
   <div class="ambient-bg" aria-hidden="true">
     <div class="bg-grid-fade"></div>
@@ -1570,7 +1781,9 @@
   <div class="mobile-topbar">
     <div class="mobile-topbar-inner">
       <div class="mobile-brand">Nowruz Exhibition</div>
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Open exhibition navigation"><span></span></button>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Open exhibition navigation">
+        <span></span>
+      </button>
     </div>
   </div>
 
@@ -1589,6 +1802,7 @@
         <a href="#exhibit-4">04. Sonic Landscape</a>
         <a href="#exhibit-5">05. Culinary Atlas</a>
         <a href="#exhibit-6">06. Closing Reflection</a>
+        <a href="#exhibit-7">07. Further Resources</a>
       </nav>
 
       <div class="sidebar-status">
@@ -1641,16 +1855,20 @@
 
         <div class="hero-center">
           <div class="hero-kicker reveal">Solar Hijri Calendar · Vernal Equinox</div>
+
           <h1 class="hero-title reveal">
             <span class="accent">NOWRUZ</span>
-            AND THE<br>MARCH EQUINOX
+            AND THE<br> MARCH EQUINOX
           </h1>
+
           <div class="hero-nowruz-fa persian-script reveal" style="transition-delay: 0.08s;">نوروز</div>
+
           <p class="hero-subtitle reveal" style="transition-delay: 0.16s;">
             An immersive digital exhibition tracing the exact astronomical instant that begins the Persian New Year, the ceremonial rhythm surrounding it, the music that scores it, and the food that completes its springtime world.
           </p>
+
           <div class="hero-actions reveal" style="transition-delay: 0.24s;">
-            <a class="hero-btn primary" href="#exhibit-1">Enter Exhibition</a>
+            <a class="hero-btn primary" href="#intro-film">Enter Exhibition</a>
             <a class="hero-btn" href="#exhibit-4">Listen to the Music</a>
           </div>
         </div>
@@ -1663,20 +1881,65 @@
               <div class="count-pill">Loading countdown…</div>
             </div>
           </div>
+
           <div class="hero-stat" style="background: rgba(196, 209, 223, 0.32);">
             <span>Local Istanbul Time</span>
             <strong>17:46 TRT</strong>
           </div>
+
           <div class="hero-stat" style="background: rgba(245, 240, 230, 0.44);">
             <span>Historical Depth</span>
             <strong>3000+ Years</strong>
           </div>
+
           <div class="hero-stat" style="background: rgba(255,255,255,0.38);">
             <span>Core Theme</span>
             <strong>Spring, Renewal, Balance</strong>
           </div>
         </div>
       </header>
+
+      <section id="intro-film" class="section" data-pattern-index="0">
+        <div class="section-shell">
+          <div class="section-header reveal">
+            <div class="section-index">Prologue · Before You Begin</div>
+            <div class="section-copy">
+              <h2 class="section-title">Watch this short introduction before entering the exhibition.</h2>
+              <p class="section-lead">For many visitors, Nowruz is at once familiar and new: a celebration of spring, a turning of the year, and a living cultural tradition carried across homes, languages, and generations. This short film offers a welcoming starting point before you move through the deeper layers of the exhibition.</p>
+            </div>
+          </div>
+
+          <div class="intro-video-shell glass-card reveal">
+            <div class="intro-video-copy">
+              <div class="hero-kicker" style="margin-bottom: 0;">Introductory Film</div>
+              <h3>Nowruz Persian New Year | How millions celebrate the Persian New Year</h3>
+              <p>
+                This opening video provides a broad and accessible introduction to Nowruz: how it is celebrated, why it matters, and how seasonal change, family ritual, hospitality, and memory come together around the Persian New Year. It is the ideal first step before exploring the exhibition’s more detailed sections.
+              </p>
+              <div class="hero-countdown">
+                <div class="count-pill">History, ritual, renewal</div>
+                <div class="count-pill">A springtime worldview</div>
+                <div class="count-pill">Begin with the wider story</div>
+              </div>
+              <div class="music-note">
+                After watching, continue below to explore the equinox, the ritual timeline, the symbolic language of the Haft-Seen, the soundscape of Persian music, and the flavors of the holiday table.
+              </div>
+              <div class="hero-actions" style="justify-content: flex-start; margin-top: 8px;">
+                <a class="hero-btn primary" href="#exhibit-1">Start the Exhibition</a>
+              </div>
+            </div>
+
+            <div class="intro-video-frame">
+              <iframe
+                src="https://www.youtube.com/embed/y8l0GWGVlDc"
+                title="Nowruz Persian New Year | How millions celebrate the Persian New Year"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section id="exhibit-1" class="section" data-pattern-index="0">
         <div class="section-shell">
@@ -1692,19 +1955,23 @@
             <article class="glass-card astro-card">
               <h3>The mathematics of spring</h3>
               <p>At the March equinox, Earth’s axis remains tilted at roughly 23.44°, but the geometry of its orbit places the Sun directly above the equator. The result is a moment of planetary balance: day and night stand in near-equal proportion across the globe. That is why Nowruz feels less like a convention and more like a cosmological threshold.</p>
+
               <div class="astro-detail-grid">
                 <div class="astro-detail">
                   <span>Equinox trigger</span>
                   <strong>Sun crosses the celestial equator northward</strong>
                 </div>
+
                 <div class="astro-detail">
                   <span>Calendar logic</span>
                   <strong>Seasonally anchored rather than administratively reset</strong>
                 </div>
+
                 <div class="astro-detail">
                   <span>2026 UTC</span>
                   <strong>Friday, 20 March · 14:46</strong>
                 </div>
+
                 <div class="astro-detail">
                   <span>2026 Istanbul</span>
                   <strong>Friday, 20 March · 17:46 TRT</strong>
@@ -1816,57 +2083,155 @@
             </div>
           </div>
 
+          <div class="section-figure glass-card reveal">
+            <div class="section-figure-copy">
+              <span>Featured Image</span>
+              <strong>The Haft-Seen as a complete symbolic composition</strong>
+              <p>The Haft-Seen is most powerful when seen as a whole. Before moving through each individual symbol, this image invites the visitor to encounter the table as a carefully arranged world of growth, sweetness, beauty, patience, protection, memory, and dawn — all gathered at the threshold of a new year.</p>
+            </div>
+
+            <div class="section-figure-frame">
+              <img
+                src="assets/img/haft-seen-table.png"
+                alt="Haft-Seen table overview"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.hidden=false;">
+              <div class="section-figure-placeholder" hidden>
+                The Haft-Seen gathers living growth, sweetness, fragrance, patience, and light into a single ceremonial image of the new year.
+              </div>
+            </div>
+          </div>
+
           <div class="split-panel reveal">
             <div class="panel-list" id="haftSeenList">
-              <button class="panel-item active" data-type="haftseen" data-overline="Symbol of renewal" data-en="Sabzeh" data-fa="سبزه" data-sub="/sæbˈze/" data-desc="Sprouted wheatgrass or lentils representing rebirth, fresh growth, and the return of life after winter." data-a="Material form|Living green shoots" data-b="Cultural meaning|Rebirth and renewal" data-c="Visual role|The living center of the table" data-d="Seasonal logic|Spring made visible">
+              <button
+                class="panel-item active"
+                data-type="haftseen"
+                data-overline="Symbol of renewal"
+                data-en="Sabzeh"
+                data-fa="سبزه"
+                data-sub="/sæbˈze/"
+                data-desc="Sprouted wheatgrass or lentils representing rebirth, fresh growth, and the return of life after winter."
+                data-a="Material form|Living green shoots"
+                data-b="Cultural meaning|Rebirth and renewal"
+                data-c="Visual role|The living center of the table"
+                data-d="Seasonal logic|Spring made visible"
+                data-img="assets/img/haftseen-sabzeh.png"
+                data-img-alt="Sabzeh on the Haft-Seen table">
                 <div class="panel-item-top"><h4>Sabzeh</h4><span class="persian-script">سبزه</span></div>
                 <small>Sprouted greens and the visible sign of spring.</small>
               </button>
-              <button class="panel-item" data-type="haftseen" data-overline="Symbol of strength" data-en="Samanu" data-fa="سمنو" data-sub="/sæmæˈnu/" data-desc="A sweet pudding made from germinated wheat. Its slow preparation signifies strength, patience, abundance, and nourishment." data-a="Material form|Wheat-based sweet paste" data-b="Cultural meaning|Strength and sweetness" data-c="Visual role|Dense, earthy richness" data-d="Seasonal logic|The stored energy of grain">
+
+              <button
+                class="panel-item"
+                data-type="haftseen"
+                data-overline="Symbol of strength"
+                data-en="Samanu"
+                data-fa="سمنو"
+                data-sub="/sæmæˈnu/"
+                data-desc="A sweet pudding made from germinated wheat. Its slow preparation signifies strength, patience, abundance, and nourishment."
+                data-a="Material form|Wheat-based sweet paste"
+                data-b="Cultural meaning|Strength and sweetness"
+                data-c="Visual role|Dense, earthy richness"
+                data-d="Seasonal logic|The stored energy of grain"
+                data-img="assets/img/haftseen-samanu.png"
+                data-img-alt="Samanu on the Haft-Seen table">
                 <div class="panel-item-top"><h4>Samanu</h4><span class="persian-script">سمنو</span></div>
                 <small>Patience transformed into nourishment.</small>
               </button>
-              <button class="panel-item" data-type="haftseen" data-overline="Symbol of love" data-en="Senjed" data-fa="سنجد" data-sub="/senˈdʒed/" data-desc="The dried fruit of the oleaster tree, associated with affection, devotion, and the rooted memory of love." data-a="Material form|Oleaster fruit" data-b="Cultural meaning|Love and attachment" data-c="Visual role|Dry fruit texture and contrast" data-d="Seasonal logic|Memory carried into the new year">
+
+              <button
+                class="panel-item"
+                data-type="haftseen"
+                data-overline="Symbol of love"
+                data-en="Senjed"
+                data-fa="سنجد"
+                data-sub="/senˈdʒed/"
+                data-desc="The dried fruit of the oleaster tree, associated with affection, devotion, and the rooted memory of love."
+                data-a="Material form|Oleaster fruit"
+                data-b="Cultural meaning|Love and attachment"
+                data-c="Visual role|Dry fruit texture and contrast"
+                data-d="Seasonal logic|Memory carried into the new year"
+                data-img="assets/img/haftseen-senjed.png"
+                data-img-alt="Senjed on the Haft-Seen table">
                 <div class="panel-item-top"><h4>Senjed</h4><span class="persian-script">سنجد</span></div>
                 <small>Love, affection, and rooted memory.</small>
               </button>
-              <button class="panel-item" data-type="haftseen" data-overline="Symbol of beauty" data-en="Seeb" data-fa="سیب" data-sub="/siːb/" data-desc="A bright apple representing beauty, vitality, bodily well-being, and the visible attractiveness of life." data-a="Material form|Red apple" data-b="Cultural meaning|Beauty and health" data-c="Visual role|Color accent on the table" data-d="Seasonal logic|Ripeness carried into spring">
+
+              <button
+                class="panel-item"
+                data-type="haftseen"
+                data-overline="Symbol of beauty"
+                data-en="Seeb"
+                data-fa="سیب"
+                data-sub="/siːb/"
+                data-desc="A bright apple representing beauty, vitality, bodily well-being, and the visible attractiveness of life."
+                data-a="Material form|Red apple"
+                data-b="Cultural meaning|Beauty and health"
+                data-c="Visual role|Color accent on the table"
+                data-d="Seasonal logic|Ripeness carried into spring"
+                data-img="assets/img/haftseen-seeb.png"
+                data-img-alt="Seeb on the Haft-Seen table">
                 <div class="panel-item-top"><h4>Seeb</h4><span class="persian-script">سیب</span></div>
                 <small>Beauty and physical vitality.</small>
               </button>
-              <button class="panel-item" data-type="haftseen" data-overline="Symbol of protection" data-en="Sir" data-fa="سیر" data-sub="/siːr/" data-desc="Garlic stands for protection, health, and the preventive wisdom of traditional healing." data-a="Material form|Garlic bulbs" data-b="Cultural meaning|Protection and health" data-c="Visual role|Earthy medicinal presence" data-d="Seasonal logic|Guarding the threshold of the year">
+
+              <button
+                class="panel-item"
+                data-type="haftseen"
+                data-overline="Symbol of protection"
+                data-en="Sir"
+                data-fa="سیر"
+                data-sub="/siːr/"
+                data-desc="Garlic stands for protection, health, and the preventive wisdom of traditional healing."
+                data-a="Material form|Garlic bulbs"
+                data-b="Cultural meaning|Protection and health"
+                data-c="Visual role|Earthy medicinal presence"
+                data-d="Seasonal logic|Guarding the threshold of the year"
+                data-img="assets/img/haftseen-sir.png"
+                data-img-alt="Sir on the Haft-Seen table">
                 <div class="panel-item-top"><h4>Sir</h4><span class="persian-script">سیر</span></div>
                 <small>Health, medicine, and safeguarding.</small>
               </button>
-              <button class="panel-item" data-type="haftseen" data-overline="Symbol of endurance" data-en="Serkeh" data-fa="سرکه" data-sub="/serˈke/" data-desc="Vinegar, formed through time and transformation, symbolizes patience, endurance, and maturity." data-a="Material form|Aged vinegar" data-b="Cultural meaning|Wisdom and endurance" data-c="Visual role|Liquid amber contrast" data-d="Seasonal logic|Time as a refining force">
+
+              <button
+                class="panel-item"
+                data-type="haftseen"
+                data-overline="Symbol of endurance"
+                data-en="Serkeh"
+                data-fa="سرکه"
+                data-sub="/serˈke/"
+                data-desc="Vinegar, formed through time and transformation, symbolizes patience, endurance, and maturity."
+                data-a="Material form|Aged vinegar"
+                data-b="Cultural meaning|Wisdom and endurance"
+                data-c="Visual role|Liquid amber contrast"
+                data-d="Seasonal logic|Time as a refining force"
+                data-img="assets/img/haftseen-serkeh.png"
+                data-img-alt="Serkeh on the Haft-Seen table">
                 <div class="panel-item-top"><h4>Serkeh</h4><span class="persian-script">سرکه</span></div>
                 <small>Patience, time, and maturity.</small>
               </button>
-              <button class="panel-item" data-type="haftseen" data-overline="Symbol of sunrise" data-en="Sumac" data-fa="سماق" data-sub="/soˈmɒːq/" data-desc="This deep red spice evokes the color of dawn and symbolizes the victory of light over darkness." data-a="Material form|Crushed red spice" data-b="Cultural meaning|Sunrise and awakening" data-c="Visual role|Crimson tonal depth" data-d="Seasonal logic|Morning light after winter">
+
+              <button
+                class="panel-item"
+                data-type="haftseen"
+                data-overline="Symbol of sunrise"
+                data-en="Sumac"
+                data-fa="سماق"
+                data-sub="/soˈmɒːq/"
+                data-desc="This deep red spice evokes the color of dawn and symbolizes the victory of light over darkness."
+                data-a="Material form|Crushed red spice"
+                data-b="Cultural meaning|Sunrise and awakening"
+                data-c="Visual role|Crimson tonal depth"
+                data-d="Seasonal logic|Morning light after winter"
+                data-img="assets/img/haftseen-sumac.png"
+                data-img-alt="Sumac on the Haft-Seen table">
                 <div class="panel-item-top"><h4>Sumac</h4><span class="persian-script">سماق</span></div>
                 <small>Dawn, light, and awakening.</small>
               </button>
             </div>
 
-            <div class="panel-display" id="haftSeenDisplay">
-              <div class="panel-display-inner">
-                <div class="panel-meta">
-                  <div>
-                    <div class="panel-overline">Symbol of renewal</div>
-                    <h3 class="panel-title-en">Sabzeh</h3>
-                    <div class="panel-subtle">/sæbˈze/</div>
-                  </div>
-                  <div class="panel-title-fa persian-script">سبزه</div>
-                </div>
-                <p>Sprouted wheatgrass or lentils representing rebirth, fresh growth, and the return of life after winter.</p>
-                <div class="symbol-grid">
-                  <div class="symbol-card"><span>Material form</span><strong>Living green shoots</strong></div>
-                  <div class="symbol-card"><span>Cultural meaning</span><strong>Rebirth and renewal</strong></div>
-                  <div class="symbol-card"><span>Visual role</span><strong>The living center of the table</strong></div>
-                  <div class="symbol-card"><span>Seasonal logic</span><strong>Spring made visible</strong></div>
-                </div>
-              </div>
-            </div>
+            <div class="panel-display" id="haftSeenDisplay" aria-live="polite"></div>
           </div>
         </div>
       </section>
@@ -1880,12 +2245,14 @@
               <p class="section-lead">Persian classical music turns seasonal transition into sound. The timbre of the tar, the breath of the ney, and the phrasing of vocal avaz deepen the reflective atmosphere of the new year.</p>
             </div>
           </div>
-<div class="spotify-feature glass-card reveal">
+
+          <div class="spotify-feature glass-card reveal">
             <div class="spotify-top">
               <div>
                 <div class="media-role">Curated by Us</div>
                 <h3 class="spotify-title">The exhibition playlist on Spotify</h3>
               </div>
+
               <div class="hero-countdown" style="margin-top: 0;">
                 <div class="count-pill">Persian classical</div>
                 <div class="count-pill">Spring atmosphere</div>
@@ -1895,12 +2262,20 @@
 
             <div class="spotify-layout">
               <div class="spotify-player">
-                <!-- Replace REPLACE_WITH_YOUR_PLAYLIST_ID with your actual Spotify playlist ID or full embed URL -->
-                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/66PdOTLNoLaSHkld220U1i?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe
+                  data-testid="embed-iframe"
+                  style="border-radius:12px"
+                  src="https://open.spotify.com/embed/playlist/66PdOTLNoLaSHkld220U1i?utm_source=generator&theme=0"
+                  width="100%"
+                  height="352"
+                  frameborder="0"
+                  allowfullscreen
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"></iframe>
               </div>
 
               <div class="spotify-copy">
-                <h3>Enjoy the Persian motifes in music</h3>
+                <h3>Enjoy the Persian motifs in music</h3>
                 <p>This playlist extends the sonic experience beyond the featured works above. It is framed as a curated companion to the exhibition, arranged by us to move through reflection, ceremony, memory, and renewal across the emotional landscape of Nowruz.</p>
 
                 <div class="spotify-pills">
@@ -1914,13 +2289,10 @@
                   <strong>Curatorial Note</strong>
                   <p>This Spotify playlist is curated by us as part of the digital exhibition. It is meant to function as an additional layer of the site rather than a separate media block, carrying the same cultural atmosphere into a longer listening session.</p>
                 </div>
-
-  
               </div>
             </div>
           </div>
-        </div>
-      </section>
+
           <div class="media-grid reveal">
             <article class="media-card">
               <div class="media-info">
@@ -1966,8 +2338,8 @@
               </div>
             </article>
           </div>
-
-          
+        </div>
+      </section>
 
       <section id="exhibit-5" class="section" data-pattern-index="2">
         <div class="section-shell">
@@ -1976,6 +2348,7 @@
             <div class="section-copy">
               <h2 class="section-title">Nowruz is also tasted, shared, and served.</h2>
               <p class="section-lead">The festive table extends beyond symbol into hospitality. Herbs, rice, fish, noodles, sweets, and grains all carry their own seasonal meaning. This section mirrors the Haft-Seen interaction so the visitor can explore food as another layer of the exhibition.</p>
+
               <div class="food-badges">
                 <div class="food-badge">Fresh Herbs</div>
                 <div class="food-badge">Hospitality</div>
@@ -1987,56 +2360,104 @@
 
           <div class="split-panel food-shell reveal">
             <div class="panel-list" id="foodList">
-              <button class="panel-item active" data-type="food" data-overline="Nowruz eve classic" data-en="Sabzi Polo ba Mahi" data-fa="سبزی پلو با ماهی" data-sub="Herbed rice with fish" data-desc="The iconic meal of Nowruz eve. Rice is packed with dill, parsley, cilantro, fenugreek, and green onion, then paired with fish to announce the arrival of spring with fragrance, freshness, and life." data-a="Core symbol|Spring greenery and vitality" data-b="Serving context|Nowruz eve dinner" data-c="Flavor profile|Fresh, aromatic, bright" data-d="Why it matters|It is the seasonal signature dish of the holiday">
+              <button
+                class="panel-item active"
+                data-type="food"
+                data-overline="Nowruz eve classic"
+                data-en="Sabzi Polo ba Mahi"
+                data-fa="سبزی پلو با ماهی"
+                data-sub="Herbed rice with fish"
+                data-desc="The iconic meal of Nowruz eve. Rice is packed with dill, parsley, cilantro, fenugreek, and green onion, then paired with fish to announce the arrival of spring with fragrance, freshness, and life."
+                data-a="Core symbol|Spring greenery and vitality"
+                data-b="Serving context|Nowruz eve dinner"
+                data-c="Flavor profile|Fresh, aromatic, bright"
+                data-d="Why it matters|It is the seasonal signature dish of the holiday">
                 <div class="panel-item-top"><h4>Sabzi Polo ba Mahi</h4><span class="persian-script">سبزی پلو با ماهی</span></div>
                 <small>The defining rice-and-fish dish of the new year.</small>
               </button>
 
-              <button class="panel-item" data-type="food" data-overline="Herb-forward comfort" data-en="Kuku Sabzi" data-fa="کوکو سبزی" data-sub="Herb frittata with walnuts and barberries" data-desc="A dense, emerald-green herb frittata often enriched with walnuts and barberries. It turns spring herbs into a celebratory dish of color, richness, and abundance." data-a="Core symbol|Fertility and renewal" data-b="Serving context|Shared appetizer or main" data-c="Flavor profile|Herbal, savory, nutty" data-d="Why it matters|It concentrates the taste of spring in a single dish">
+              <button
+                class="panel-item"
+                data-type="food"
+                data-overline="Herb-forward comfort"
+                data-en="Kuku Sabzi"
+                data-fa="کوکو سبزی"
+                data-sub="Herb frittata with walnuts and barberries"
+                data-desc="A dense, emerald-green herb frittata often enriched with walnuts and barberries. It turns spring herbs into a celebratory dish of color, richness, and abundance."
+                data-a="Core symbol|Fertility and renewal"
+                data-b="Serving context|Shared appetizer or main"
+                data-c="Flavor profile|Herbal, savory, nutty"
+                data-d="Why it matters|It concentrates the taste of spring in a single dish">
                 <div class="panel-item-top"><h4>Kuku Sabzi</h4><span class="persian-script">کوکو سبزی</span></div>
                 <small>A vivid herb dish that looks like spring on a plate.</small>
               </button>
 
-              <button class="panel-item" data-type="food" data-overline="Ritual soup" data-en="Ash-e Reshteh" data-fa="آش رشته" data-sub="Thick herb and noodle soup" data-desc="A substantial soup made with herbs, legumes, noodles, and kashk. The noodles carry a symbolic meaning: they help one take hold of the tangled threads of life in the coming year." data-a="Core symbol|Untangling life’s complexities" data-b="Serving context|Gatherings and visits" data-c="Flavor profile|Deep, sour, herbal, comforting" data-d="Why it matters|It is one of the most culturally loaded Persian soups">
+              <button
+                class="panel-item"
+                data-type="food"
+                data-overline="Ritual soup"
+                data-en="Ash-e Reshteh"
+                data-fa="آش رشته"
+                data-sub="Thick herb and noodle soup"
+                data-desc="A substantial soup made with herbs, legumes, noodles, and kashk. The noodles carry a symbolic meaning: they help one take hold of the tangled threads of life in the coming year."
+                data-a="Core symbol|Untangling life’s complexities"
+                data-b="Serving context|Gatherings and visits"
+                data-c="Flavor profile|Deep, sour, herbal, comforting"
+                data-d="Why it matters|It is one of the most culturally loaded Persian soups">
                 <div class="panel-item-top"><h4>Ash-e Reshteh</h4><span class="persian-script">آش رشته</span></div>
                 <small>A ceremonial soup with symbolic noodles.</small>
               </button>
 
-              <button class="panel-item" data-type="food" data-overline="Control and direction" data-en="Reshteh Polo" data-fa="رشته‌پلو" data-sub="Rice with toasted noodles" data-desc="Rice mixed with lightly toasted noodles and often paired with raisins, dates, or meat. The symbolic reading is explicit: in the new year, you take the reins of your own affairs." data-a="Core symbol|Direction and agency" data-b="Serving context|Holiday meal table" data-c="Flavor profile|Sweet-savory and warm" data-d="Why it matters|It turns a staple into a statement of intention">
+              <button
+                class="panel-item"
+                data-type="food"
+                data-overline="Control and direction"
+                data-en="Reshteh Polo"
+                data-fa="رشته‌پلو"
+                data-sub="Rice with toasted noodles"
+                data-desc="Rice mixed with lightly toasted noodles and often paired with raisins, dates, or meat. The symbolic reading is explicit: in the new year, you take the reins of your own affairs."
+                data-a="Core symbol|Direction and agency"
+                data-b="Serving context|Holiday meal table"
+                data-c="Flavor profile|Sweet-savory and warm"
+                data-d="Why it matters|It turns a staple into a statement of intention">
                 <div class="panel-item-top"><h4>Reshteh Polo</h4><span class="persian-script">رشته‌پلو</span></div>
                 <small>Rice and noodles symbolizing control over the year ahead.</small>
               </button>
 
-              <button class="panel-item" data-type="food" data-overline="Festive sweetness" data-en="Shirini-e Eid" data-fa="شیرینی عید" data-sub="Holiday sweets and pastries" data-desc="No Nowruz reception feels complete without sweets. Chickpea cookies, baklava, rice flour cookies, and other pastries are offered to guests as signs of welcome and wishes for a sweet year." data-a="Core symbol|Sweetness and joy" data-b="Serving context|Guest hospitality" data-c="Flavor profile|Delicate, nutty, fragrant" data-d="Why it matters|It shapes the social ritual of visiting">
+              <button
+                class="panel-item"
+                data-type="food"
+                data-overline="Festive sweetness"
+                data-en="Shirini-e Eid"
+                data-fa="شیرینی عید"
+                data-sub="Holiday sweets and pastries"
+                data-desc="No Nowruz reception feels complete without sweets. Chickpea cookies, baklava, rice flour cookies, and other pastries are offered to guests as signs of welcome and wishes for a sweet year."
+                data-a="Core symbol|Sweetness and joy"
+                data-b="Serving context|Guest hospitality"
+                data-c="Flavor profile|Delicate, nutty, fragrant"
+                data-d="Why it matters|It shapes the social ritual of visiting">
                 <div class="panel-item-top"><h4>Shirini-e Eid</h4><span class="persian-script">شیرینی عید</span></div>
                 <small>Pastries offered during holiday visits and greetings.</small>
               </button>
 
-              <button class="panel-item" data-type="food" data-overline="Shared abundance" data-en="Ajil-e Nowruzi" data-fa="آجیل نوروزی" data-sub="Mixed nuts and dried fruits" data-desc="A festive mix of nuts and dried fruits served throughout the holiday. It is practical, shareable, and celebratory: a small edible archive of abundance placed within easy reach of every guest." data-a="Core symbol|Prosperity and generosity" data-b="Serving context|Continuous hosting" data-c="Flavor profile|Crunchy, sweet, rich" data-d="Why it matters|It keeps the social flow of the home alive">
+              <button
+                class="panel-item"
+                data-type="food"
+                data-overline="Shared abundance"
+                data-en="Ajil-e Nowruzi"
+                data-fa="آجیل نوروزی"
+                data-sub="Mixed nuts and dried fruits"
+                data-desc="A festive mix of nuts and dried fruits served throughout the holiday. It is practical, shareable, and celebratory: a small edible archive of abundance placed within easy reach of every guest."
+                data-a="Core symbol|Prosperity and generosity"
+                data-b="Serving context|Continuous hosting"
+                data-c="Flavor profile|Crunchy, sweet, rich"
+                data-d="Why it matters|It keeps the social flow of the home alive">
                 <div class="panel-item-top"><h4>Ajil-e Nowruzi</h4><span class="persian-script">آجیل نوروزی</span></div>
                 <small>The generous, shareable snack of the season.</small>
               </button>
             </div>
 
-            <div class="panel-display" id="foodDisplay">
-              <div class="panel-display-inner">
-                <div class="panel-meta">
-                  <div>
-                    <div class="panel-overline">Nowruz eve classic</div>
-                    <h3 class="panel-title-en">Sabzi Polo ba Mahi</h3>
-                    <div class="panel-subtle">Herbed rice with fish</div>
-                  </div>
-                  <div class="panel-title-fa persian-script">سبزی پلو با ماهی</div>
-                </div>
-                <p>The iconic meal of Nowruz eve. Rice is packed with dill, parsley, cilantro, fenugreek, and green onion, then paired with fish to announce the arrival of spring with fragrance, freshness, and life.</p>
-                <div class="symbol-grid">
-                  <div class="symbol-card"><span>Core symbol</span><strong>Spring greenery and vitality</strong></div>
-                  <div class="symbol-card"><span>Serving context</span><strong>Nowruz eve dinner</strong></div>
-                  <div class="symbol-card"><span>Flavor profile</span><strong>Fresh, aromatic, bright</strong></div>
-                  <div class="symbol-card"><span>Why it matters</span><strong>It is the seasonal signature dish of the holiday</strong></div>
-                </div>
-              </div>
-            </div>
+            <div class="panel-display" id="foodDisplay" aria-live="polite"></div>
           </div>
         </div>
       </section>
@@ -2056,19 +2477,23 @@
               <h3>Nowruz is a designed experience.</h3>
               <p>Its enduring force comes from structure. Geometry appears in architecture, ceremony appears in sequence, meaning appears in objects, and renewal appears in action. This site translates that logic into a digital exhibition with layered motion, scroll-based pattern shifts, interactive symbolic panels, and responsive media layouts.</p>
             </div>
+
             <div class="closing-grid">
               <div class="closing-mini">
                 <span>Sky</span>
                 <strong>The equinox fixes the exact threshold.</strong>
               </div>
+
               <div class="closing-mini">
                 <span>Home</span>
                 <strong>Cleaning and table-setting prepare the domestic stage.</strong>
               </div>
+
               <div class="closing-mini">
                 <span>Sound</span>
                 <strong>Music deepens the emotional transition.</strong>
               </div>
+
               <div class="closing-mini">
                 <span>Table</span>
                 <strong>Food and symbols turn renewal into something shared.</strong>
@@ -2078,8 +2503,53 @@
         </div>
       </section>
 
+      <section id="exhibit-7" class="section" data-pattern-index="1">
+        <div class="section-shell">
+          <div class="section-header reveal">
+            <div class="section-index">07 · Further Resources</div>
+            <div class="section-copy">
+              <h2 class="section-title">Continue exploring Nowruz beyond this exhibition.</h2>
+              <p class="section-lead">This digital exhibition was shaped in part by educational resources that help place Nowruz in a broader historical and cultural context. Visitors who want to continue reading can explore the page below for additional background, references, and learning materials.</p>
+            </div>
+          </div>
+
+          <div class="closing-card reveal">
+            <div>
+              <h3>An inspiring reference for further learning.</h3>
+              <p>This website was inspired by the Indiana University Libraries resource page on Nowruz and related traditions. It offers a thoughtful next step for visitors who want to move from visual experience into deeper reading, broader context, and a more research-oriented understanding of the holiday.</p>
+              <div class="hero-actions" style="justify-content: flex-start; margin-top: 24px;">
+                <a
+                  class="hero-btn primary"
+                  href="https://guides.libraries.indiana.edu/c.php?g=1016304&p=7366460"
+                  target="_blank"
+                  rel="noopener noreferrer">Visit here for more resources</a>
+              </div>
+            </div>
+
+            <div class="closing-grid">
+              <div class="closing-mini">
+                <span>Historical Framing</span>
+                <strong>The guide helps place Nowruz within a wider historical and cultural landscape.</strong>
+              </div>
+              <div class="closing-mini">
+                <span>Deeper Reading</span>
+                <strong>It extends the exhibition with a quieter, more reference-based path into the subject.</strong>
+              </div>
+              <div class="closing-mini">
+                <span>Academic Context</span>
+                <strong>Because it is hosted by a university library, it offers a useful bridge between celebration and study.</strong>
+              </div>
+              <div class="closing-mini">
+                <span>After the Exhibition</span>
+                <strong>Visit it when you want the story of Nowruz to continue beyond this digital space.</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <footer class="footer">
-        Nowruz Digital Exhibition | 2026 .
+        Nowruz Digital Exhibition | 2026
       </footer>
     </main>
   </div>
@@ -2088,6 +2558,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       const body = document.body;
       const reveals = document.querySelectorAll('.reveal');
+
       const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -2096,6 +2567,7 @@
           }
         });
       }, { threshold: 0.12 });
+
       reveals.forEach(el => observer.observe(el));
 
       const progressBar = document.getElementById('top-progress-bar');
@@ -2129,6 +2601,7 @@
 
         let currentId = '';
         let patternIndex = 0;
+
         sections.forEach(section => {
           const top = section.offsetTop;
           if (scrollY >= top - window.innerHeight * 0.45) {
@@ -2136,6 +2609,7 @@
             patternIndex = Number(section.dataset.patternIndex || 0);
           }
         });
+
         activatePattern(patternIndex);
 
         navLinks.forEach(link => {
@@ -2149,64 +2623,118 @@
 
       if (mobileToggle) {
         mobileToggle.addEventListener('click', () => body.classList.toggle('menu-open'));
+
         navLinks.forEach(link => {
           link.addEventListener('click', () => body.classList.remove('menu-open'));
         });
+
         document.addEventListener('click', (e) => {
           if (!body.classList.contains('menu-open')) return;
+
           const insideSidebar = sidebarNav.contains(e.target);
           const clickedToggle = mobileToggle.contains(e.target);
+
           if (!insideSidebar && !clickedToggle) body.classList.remove('menu-open');
         });
+      }
+
+      function buildPanelMarkup(btn) {
+        const overline = btn.dataset.overline || '';
+        const en = btn.dataset.en || '';
+        const fa = btn.dataset.fa || '';
+        const sub = btn.dataset.sub || '';
+        const desc = btn.dataset.desc || '';
+        const [aLabel, aValue] = (btn.dataset.a || '|').split('|');
+        const [bLabel, bValue] = (btn.dataset.b || '|').split('|');
+        const [cLabel, cValue] = (btn.dataset.c || '|').split('|');
+        const [dLabel, dValue] = (btn.dataset.d || '|').split('|');
+        const img = btn.dataset.img || '';
+        const imgAlt = btn.dataset.imgAlt || en;
+
+        const contentMarkup = img ? `
+          <div class="panel-layout">
+            <div class="panel-copy">
+              <p>${desc}</p>
+              <div class="symbol-grid">
+                <div class="symbol-card"><span>${aLabel}</span><strong>${aValue}</strong></div>
+                <div class="symbol-card"><span>${bLabel}</span><strong>${bValue}</strong></div>
+                <div class="symbol-card"><span>${cLabel}</span><strong>${cValue}</strong></div>
+                <div class="symbol-card"><span>${dLabel}</span><strong>${dValue}</strong></div>
+              </div>
+            </div>
+
+            <div class="panel-visual">
+              <img
+                src="${img}"
+                alt="${imgAlt}"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.hidden=false;">
+              <div class="panel-visual-placeholder" hidden>
+                <strong style="display:block; margin: 0 0 8px;">${en}</strong>
+                This symbol carries its own visual character within the Haft-Seen, adding color, texture, and emotional weight to the larger story of renewal.
+              </div>
+            </div>
+          </div>
+        ` : `
+          <p>${desc}</p>
+          <div class="symbol-grid">
+            <div class="symbol-card"><span>${aLabel}</span><strong>${aValue}</strong></div>
+            <div class="symbol-card"><span>${bLabel}</span><strong>${bValue}</strong></div>
+            <div class="symbol-card"><span>${cLabel}</span><strong>${cValue}</strong></div>
+            <div class="symbol-card"><span>${dLabel}</span><strong>${dValue}</strong></div>
+          </div>
+        `;
+
+        return `
+          <div class="panel-display-inner">
+            <div class="panel-meta">
+              <div>
+                <div class="panel-overline">${overline}</div>
+                <h3 class="panel-title-en">${en}</h3>
+                <div class="panel-subtle">${sub}</div>
+              </div>
+              <div class="panel-title-fa persian-script">${fa}</div>
+            </div>
+            ${contentMarkup}
+          </div>
+        `;
       }
 
       function bindPanel(listSelector, displaySelector) {
         const list = document.querySelector(listSelector);
         const display = document.querySelector(displaySelector);
+
         if (!list || !display) return;
 
         const buttons = [...list.querySelectorAll('.panel-item')];
+
+        function render(btn, immediate = false) {
+          const markup = buildPanelMarkup(btn);
+          const current = display.querySelector('.panel-display-inner');
+
+          if (!current || immediate) {
+            display.innerHTML = markup;
+            return;
+          }
+
+          current.style.opacity = '0';
+          current.style.transform = 'translateY(10px)';
+
+          setTimeout(() => {
+            display.innerHTML = markup;
+          }, 160);
+        }
+
         buttons.forEach(btn => {
           btn.addEventListener('click', () => {
             buttons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-
-            const overline = btn.dataset.overline || '';
-            const en = btn.dataset.en || '';
-            const fa = btn.dataset.fa || '';
-            const sub = btn.dataset.sub || '';
-            const desc = btn.dataset.desc || '';
-            const [aLabel, aValue] = (btn.dataset.a || '|').split('|');
-            const [bLabel, bValue] = (btn.dataset.b || '|').split('|');
-            const [cLabel, cValue] = (btn.dataset.c || '|').split('|');
-            const [dLabel, dValue] = (btn.dataset.d || '|').split('|');
-
-            display.querySelector('.panel-display-inner').style.opacity = '0';
-            display.querySelector('.panel-display-inner').style.transform = 'translateY(10px)';
-
-            setTimeout(() => {
-              display.innerHTML = `
-                <div class="panel-display-inner">
-                  <div class="panel-meta">
-                    <div>
-                      <div class="panel-overline">${overline}</div>
-                      <h3 class="panel-title-en">${en}</h3>
-                      <div class="panel-subtle">${sub}</div>
-                    </div>
-                    <div class="panel-title-fa persian-script">${fa}</div>
-                  </div>
-                  <p>${desc}</p>
-                  <div class="symbol-grid">
-                    <div class="symbol-card"><span>${aLabel}</span><strong>${aValue}</strong></div>
-                    <div class="symbol-card"><span>${bLabel}</span><strong>${bValue}</strong></div>
-                    <div class="symbol-card"><span>${cLabel}</span><strong>${cValue}</strong></div>
-                    <div class="symbol-card"><span>${dLabel}</span><strong>${dValue}</strong></div>
-                  </div>
-                </div>
-              `;
-            }, 160);
+            render(btn);
           });
         });
+
+        const activeBtn = list.querySelector('.panel-item.active') || buttons[0];
+        if (activeBtn) render(activeBtn, true);
       }
 
       bindPanel('#haftSeenList', '#haftSeenDisplay');
@@ -2217,6 +2745,7 @@
 
       function updateCountdown() {
         if (!countdownEl) return;
+
         const now = Date.now();
         let diff = targetUTC - now;
 
@@ -2227,8 +2756,10 @@
 
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
         diff -= days * 1000 * 60 * 60 * 24;
+
         const hours = Math.floor(diff / (1000 * 60 * 60));
         diff -= hours * 1000 * 60 * 60;
+
         const minutes = Math.floor(diff / (1000 * 60));
 
         countdownEl.innerHTML = `
