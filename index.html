@@ -242,22 +242,35 @@
       backdrop-filter: blur(18px);
       display: flex;
       flex-direction: column;
-      padding: 34px 28px;
+      padding: 26px 22px 22px;
       z-index: 50;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
+      gap: 14px;
     }
 
-    .brand { margin-bottom: 42px; }
+    .sidebar::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .sidebar::-webkit-scrollbar-thumb {
+      background: rgba(11,19,37,0.16);
+      border-radius: 999px;
+    }
+
+    .brand { margin-bottom: 12px; }
 
     .brand-mark {
-      width: 56px;
-      height: 56px;
+      width: 52px;
+      height: 52px;
       border: var(--border);
       border-radius: 18px;
       display: grid;
       place-items: center;
       font-weight: 900;
-      font-size: 1.32rem;
-      margin-bottom: 16px;
+      font-size: 1.28rem;
+      margin-bottom: 14px;
       background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.4));
       color: var(--accent);
       box-shadow: var(--shadow-sm);
@@ -265,14 +278,14 @@
 
     .brand-title {
       font-weight: 800;
-      font-size: 1.18rem;
-      line-height: 1.08;
+      font-size: 1.08rem;
+      line-height: 1.06;
       letter-spacing: -0.03em;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .brand-sub {
-      font-size: 0.83rem;
+      font-size: 0.76rem;
       color: var(--muted);
       text-transform: uppercase;
       letter-spacing: 0.09em;
@@ -282,11 +295,12 @@
     .nav-menu {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      font-size: 0.82rem;
+      gap: 6px;
+      font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.045em;
       text-transform: uppercase;
+      min-height: 0;
     }
 
     .nav-menu a {
@@ -294,11 +308,12 @@
       transition: var(--transition);
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 10px 12px;
-      border-radius: 999px;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 16px;
       position: relative;
       overflow: hidden;
+      line-height: 1.28;
     }
 
     .nav-menu a::before {
@@ -318,11 +333,11 @@
     }
 
     .nav-menu a:hover::before,
-    .nav-menu a.active::before { width: 18px; }
+    .nav-menu a.active::before { width: 14px; }
 
     .sidebar-credit {
-      margin-top: 18px;
-      padding: 16px;
+      margin-top: 8px;
+      padding: 14px;
       border: var(--border-light);
       border-radius: 18px;
       background: rgba(255,255,255,0.54);
@@ -331,7 +346,7 @@
 
     .sidebar-credit span {
       display: block;
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--muted);
@@ -342,9 +357,9 @@
     .sidebar-credit strong {
       display: block;
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.66rem;
-      line-height: 1.3;
-      margin-bottom: 10px;
+      font-size: 0.62rem;
+      line-height: 1.35;
+      margin-bottom: 0;
     }
 
     .sidebar-credit a {
@@ -353,38 +368,12 @@
       text-decoration: underline;
     }
 
-    .sidebar-status {
-      margin-top: 26px;
-      padding: 16px;
-      border: var(--border-light);
-      border-radius: 18px;
-      background: rgba(255,255,255,0.54);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .sidebar-status span {
-      display: block;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 6px;
-      font-weight: 700;
-    }
-
-    .sidebar-status strong {
-      display: block;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1rem;
-      line-height: 1.2;
-    }
-
     .sidebar-footer {
       margin-top: auto;
-      font-size: 0.74rem;
+      font-size: 0.7rem;
       color: var(--muted);
-      line-height: 1.65;
-      padding-top: 20px;
+      line-height: 1.6;
+      padding-top: 14px;
       border-top: var(--border-light);
     }
 
@@ -1630,7 +1619,6 @@
       font-size: clamp(1.8rem, 3.5vw, 2.8rem);
       margin-bottom: 12px;
     }
-    
 
     .closing-card p a {
       color: var(--accent-2);
@@ -1876,12 +1864,54 @@
         pointer-events: none;
         box-shadow: var(--shadow-lg);
         border: var(--border-light);
+        padding: 18px 16px 16px;
+        gap: 12px;
       }
 
       body.menu-open .sidebar {
         opacity: 1;
         pointer-events: auto;
         transform: translateY(0) scale(1);
+      }
+
+      .brand {
+        margin-bottom: 6px;
+      }
+
+      .brand-mark {
+        width: 46px;
+        height: 46px;
+        margin-bottom: 10px;
+        border-radius: 14px;
+        font-size: 1.12rem;
+      }
+
+      .brand-title {
+        font-size: 0.98rem;
+      }
+
+      .brand-sub {
+        font-size: 0.68rem;
+      }
+
+      .nav-menu {
+        gap: 4px;
+        font-size: 0.67rem;
+      }
+
+      .nav-menu a {
+        padding: 8px 9px;
+        gap: 7px;
+        border-radius: 14px;
+      }
+
+      .nav-menu a::before {
+        height: 1.5px;
+      }
+
+      .sidebar-credit,
+      .sidebar-footer {
+        font-size: 0.68rem;
       }
 
       .mobile-topbar { display: block; }
@@ -1939,6 +1969,64 @@
       .spotify-player iframe { min-height: 420px; }
       .panel-visual,
       .section-figure-frame { min-height: 260px; }
+
+      .mobile-topbar {
+        padding: 14px 14px 0;
+      }
+
+      .mobile-topbar-inner {
+        padding: 12px 14px;
+        border-radius: 18px;
+      }
+
+      .mobile-brand {
+        font-size: 0.82rem;
+      }
+
+      .mobile-toggle {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+      }
+
+      .sidebar {
+        inset: 66px 12px auto 12px;
+        max-height: calc(100vh - 82px);
+        border-radius: 22px;
+        padding: 14px 12px 12px;
+        gap: 10px;
+      }
+
+      .nav-menu {
+        font-size: 0.63rem;
+        letter-spacing: 0.035em;
+      }
+
+      .nav-menu a {
+        padding: 7px 8px;
+        gap: 6px;
+        line-height: 1.2;
+      }
+
+      .nav-menu a::before,
+      .nav-menu a:hover::before,
+      .nav-menu a.active::before {
+        width: 10px;
+      }
+
+      .sidebar-credit {
+        padding: 12px;
+        border-radius: 16px;
+      }
+
+      .sidebar-credit span,
+      .sidebar-footer {
+        font-size: 0.64rem;
+      }
+
+      .sidebar-credit strong {
+        font-size: 0.58rem;
+      }
     }
   </style>
 </head>
@@ -1990,18 +2078,11 @@
         <a href="#exhibit-8">08. Who We Are</a>
         <a href="#exhibit-9">09. About the Creator</a>
       </nav>
-      
-      <div class="sidebar-status">
-        <span>2026 Equinox</span>
-        <strong>20 March · 14:46 UTC<br>17:46 Istanbul</strong>
-      </div>
 
       <div class="sidebar-credit">
         <span>Credit</span>
         <strong>Digital content creation, curation, and exhibition design by <a href="https://vahidparam.com/" target="_blank" rel="noopener noreferrer">Vahid Param</a>.</strong>
       </div>
-
-   
 
       <div class="sidebar-footer">
         Curated digital exhibition on Persian Nowruz.<br>
@@ -2746,7 +2827,6 @@
                   alt="Sabancı University logo"
                   loading="lazy"
                   onerror="this.style.display='none'; this.nextElementSibling.hidden=false;">
-    
               </div>
 
               <div class="about-values">
